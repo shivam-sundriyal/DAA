@@ -24,21 +24,19 @@ int main()
 
         for(int k=0; k<n ; k++)
         {
+            comp++;
             if(A[k] == key)
             {
                 flag++;
                 printf("Element found");
                 break;
-            }
-            comp++;
+            }   
         }
         if(flag == 0)
         {
             printf("Element not found");
-            printf("\nTotal number of comparisons = %d",comp);
         }
-        else
-            printf("\nTotal number of comparisons = %d",comp+1);
+        printf("\nTotal number of comparisons = %d",comp);
 
         printf("\n-----------------------------\n");
     }
