@@ -1,52 +1,45 @@
-#include<stdio.h>
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    int t;
-    printf("Enter the number of test cases : ");
-    scanf("%d",&t);
-
-    for(int i=0 ; i<t ; i++)
+    int T;
+    cin >> T;
+    for (int i = 0; i < T; i++)
     {
-        int flag=0,comp=0;
-        printf("TEST CASE %d\n",i+1);
-        int n,key;
-        printf("Enter the number of elements of array : ");
-        scanf("%d",&n);
-        int lower=0,greater=n-1;
-        int A[n];
-        printf("Enter element :\n");
-        for(int j=0; j<n ; j++)
+        int n;
+        cin >> n;
+        int A[1000];
+        for (int j = 0; j < n; j++)
         {
-            scanf("%d",&A[j]);
+            cin >> A[j];
         }
-        printf("Enter the element to be searched : ");
-        scanf("%d",&key);
-        int mid;
+        int flag = 0, comp = 0, key;
+        cin >> key;
 
-        while(greater >= lower)
+        int mid, lower = 0, greater = n - 1;
+
+        while (greater >= lower)
         {
             comp++;
-            mid = lower + (greater - lower)/2;
+            mid = lower + (greater - lower) / 2;
 
-            if(A[mid] == key)
+            if (A[mid] == key)
             {
-                printf("Element found");
+                cout << "Present ";
                 flag++;
                 break;
             }
-            else if(key > A[mid])
-                lower = mid+1;
+            else if (key > A[mid])
+                lower = mid + 1;
             else
-               greater = mid-1;
+                greater = mid - 1;
         }
 
-        if(flag == 0)
+        if (flag == 0)
         {
-            printf("Element not found");
+            cout << "Not Present ";
         }
-        printf("\nTotal number of comparisons = %d",comp);
-
-        printf("\n-----------------------------\n");
+        cout << comp << endl;
     }
 }
