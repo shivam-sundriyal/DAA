@@ -15,30 +15,25 @@ int main()
             cin >> A[j];
 
         Quick_Sort(A, 0, n - 1);
-        for(int j=0;j<n;j++)
-            cout<<A[j]<<" ";
-        cout<<endl;
 
-        int x = 0, y = n-1,sum;
-        cout<<"Enter the sum : ";
+        int x = 0, y = n - 1, sum;
         cin >> sum;
-        for(int j=0;j<n;j++)
+        for (int j = 0; j < n; j++)
         {
-            if(A[x] + A[y] == sum)
+            if (A[x] + A[y] == sum)
             {
-                cout<<A[x]<<"+"<<A[y]<<"="<<sum;
+                cout << A[x] << " " << A[y] << endl;
                 break;
             }
-            else if(A[x] + A[y] > sum)
+            else if (A[x] + A[y] > sum)
                 y--;
-            else if(A[x] + A[y] < sum)
+            else if (A[x] + A[y] < sum)
                 x++;
-            else
-                {
-                    cout<<"No such pair";
-                    break;
-                }
-            
+            if (x > y)
+            {
+                cout << "No such Element Exist";
+                break;
+            }
         }
     }
 }
